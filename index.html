@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ============== METADATOS ESENCIALES Y SEO ============== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayudando a Fabiola - Tutorial Interactivo de Ciencias</title>
+    
+    <meta name="description" content="Un tutorial interactivo y guiado para aprender sobre conversión de temperatura, peso atómico, configuración electrónica y vectores en física y química.">
+    <meta name="keywords" content="tutorial, ciencias, física, química, temperatura, peso atómico, configuración electrónica, vectores, Fabiola, educación">
+    <meta name="author" content="Proyecto Educativo">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- ============== OPTIMIZACIÓN DE CARGA DE FUENTES ============== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- ============== HOJAS DE ESTILO (CSS) ============== -->
+    <link rel="stylesheet" href="css/Main.css">
+    <link rel="stylesheet" href="css/Components.css">
+    <link rel="stylesheet" href="css/Library.css">
+    <link rel="stylesheet" href="css/Utils.css">
+    <link rel="stylesheet" href="css/Plano_cartesiano.css">
+    <link rel="stylesheet" href="css/Recursos.css">
+    <link rel="stylesheet" href="css/Responsive.css">
+</head>
+<body>
+
+    <!-- ==================== CABECERA PRINCIPAL ==================== -->
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="https://i.ibb.co/zV1xLNS0/Picsart-25-11-06-20-49-32-425.png" alt="Logo de Ayudando a Fabiola" class="logo">
+            <h1>Ayudando a Fabiola</h1>
+        </div>
+        <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+            <a href="#temperatura" class="nav-link">Temperatura</a>
+            <a href="#peso-atomico" class="nav-link">Peso Atómico</a>
+            <a href="#configuracion-electronica" class="nav-link">Configuración Electrónica</a>
+            <a href="#vectores" class="nav-link">Vectores</a>
+        </nav>
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main>
+        <!-- SECCIÓN DE TEMPERATURA -->
+        <section id="temperatura" class="tutorial-section" aria-labelledby="temperatura-title">
+            <div class="section-wrapper">
+                <h2 id="temperatura-title">Conversión de Temperatura</h2>
+                <div class="content-wrapper">
+                    <div id="temperatura-teoria" class="teoria-container card" role="article"></div>
+                    <div id="temperatura-ejercicios" class="ejercicios-container"><h3>Ejercicios Guiados</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PESO ATÓMICO -->
+        <section id="peso-atomico" class="tutorial-section" aria-labelledby="peso-atomico-title">
+            <div class="section-wrapper">
+                <h2 id="peso-atomico-title">Cálculo de Peso Atómico</h2>
+                <div class="content-wrapper">
+                    <div id="peso-atomico-teoria" class="teoria-container card" role="article"></div>
+                    <div id="peso-atomico-ejercicios" class="ejercicios-container"><h3>Ejercicios Guiados</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CONFIGURACIÓN ELECTRÓNICA -->
+        <section id="configuracion-electronica" class="tutorial-section" aria-labelledby="configuracion-title">
+            <div class="section-wrapper">
+                <h2 id="configuracion-title">Configuración Electrónica</h2>
+                <div class="content-wrapper">
+                    <div id="configuracion-teoria" class="teoria-container card" role="article"></div>
+                    <div id="configuracion-ejercicios" class="ejercicios-container"><h3>Ejercicios Guiados</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE VECTORES -->
+        <section id="vectores" class="tutorial-section" aria-labelledby="vectores-title">
+            <div class="section-wrapper">
+                <h2 id="vectores-title">Física de Vectores</h2>
+                <div class="interactive-area" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); align-items: flex-start;">
+                    <div id="vectores-teoria" class="teoria-container card" role="article"></div>
+                    <div class="canvas-container">
+                        <canvas id="plano-cartesiano-canvas" width="500" height="500" role="img" aria-label="Plano cartesiano para la representación de vectores"></canvas>
+                    </div>
+                </div>
+                <div id="vectores-ejercicios" class="ejercicios-container"><h3>Ejercicios Guiados</h3></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== PIE DE PÁGINA ==================== -->
+    <footer class="main-footer">
+        <p>&copy; 2025 Ayudando a Fabiola. Un recurso educativo para Perú.</p>
+    </footer>
+
+    <!-- ==================== ELEMENTOS DE UI GLOBALES ==================== -->
+    <a href="#" id="back-to-top-btn" class="back-to-top-btn" aria-label="Volver arriba">↑</a>
+
+    <!-- ==================== SCRIPTS (CARGADOS CON DEFER PARA MÁXIMO RENDIMIENTO) ==================== -->
+    <!-- El orden es crucial: Librerías -> Módulos de Contenido -> Orquestadores -> Arranque -->
+
+    <!-- 1. Scripts de Soporte y Librerías -->
+    <script src="js/Utils.js" defer></script>
+    <script src="js/Library.js" defer></script>
+    <script src="js/Components.js" defer></script>
+    <script src="js/Control.js" defer></script>
+    <script src="js/Plano_cartesiano.js" defer></script>
+    <script src="js/Recursos.js" defer></script>
+    
+    <!-- 2. Scripts de Temperatura -->
+    <script src="js/Temperatura/Teoria.js" defer></script>
+    <script src="js/Temperatura/Exercise_1_to_3.js" defer></script>
+    <script src="js/Temperatura/Exercise_4_to_6.js" defer></script>
+    <script src="js/Temperatura/Animations.js" defer></script>
+    <script src="js/Temperatura/Orquestador.js" defer></script>
+
+    <!-- 3. Scripts de Peso Atómico -->
+    <script src="js/Peso atómico/Teoria.js" defer></script>
+    <script src="js/Peso atómico/Exercise_1_to_3.js" defer></script>
+    <script src="js/Peso atómico/Exercise4.js" defer></script>
+    <script src="js/Peso atómico/Exercise5.js" defer></script>
+    <script src="js/Peso atómico/Exercise6.js" defer></script>
+    <script src="js/Peso atómico/Animations.js" defer></script>
+    <script src="js/Peso atómico/Orquestador.js" defer></script>
+
+    <!-- 4. Scripts de Configuración Electrónica -->
+    <script src="js/Configuración electrónica/Teoria.js" defer></script>
+    <script src="js/Configuración electrónica/Draw.js" defer></script>
+    <script src="js/Configuración electrónica/Exercise1.js" defer></script>
+    <script src="js/Configuración electrónica/Exercise2.js" defer></script>
+    <script src="js/Configuración electrónica/Exercise3.js" defer></script>
+    <script src="js/Configuración electrónica/Exercise4.js" defer></script>
+    <script src="js/Configuración electrónica/Exercise5.js" defer></script>
+    <script src="js/Configuración electrónica/Exercise6.js" defer></script>
+    <script src="js/Configuración electrónica/Animations.js" defer></script>
+    <script src="js/Configuración electrónica/Orquestador.js" defer></script>
+
+    <!-- 5. Scripts de Vectores -->
+    <script src="js/Vectores/Teoria.js" defer></script>
+    <script src="js/Vectores/Draw.js" defer></script>
+    <script src="js/Vectores/Exercise1.js" defer></script>
+    <script src="js/Vectores/Exercise2.js" defer></script>
+    <script src="js/Vectores/Exercise3.js" defer></script>
+    <script src="js/Vectores/Exercise4.js" defer></script>
+    <script src="js/Vectores/Exercise5.js" defer></script>
+    <script src="js/Vectores/Exercise6.js" defer></script>
+    <script src="js/Vectores/Animations.js" defer></script>
+    <script src="js/Vectores/Orquestador.js" defer></script>
+
+    <!-- 6. Orquestador Principal y Arranque de la Aplicación -->
+    <script src="js/Orquestador.js" defer></script>
+    <script src="js/Main.js" defer></script>
+
+</body>
+</html>
