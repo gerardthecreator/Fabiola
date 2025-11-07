@@ -1,0 +1,22 @@
+/* css/Plano_cartesiano.css */
+/* Estilos específicos para el área del plano cartesiano de vectores. */
+
+.canvas-container {
+    position: relative; /* Necesario para posicionar mensajes de error si los hubiera */
+    width: 100%;
+    max-width: 500px; /* Limitar el tamaño máximo en pantallas grandes */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+#plano-cartesiano-canvas {
+    width: 100%;
+    height: auto; /* Hacer que la altura se ajuste proporcionalmente */
+    aspect-ratio: 1 / 1; /* Mantenerlo cuadrado */
+    border-radius: var(--border-radius);
+}
+
+.error-msg {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-align: center;
+}

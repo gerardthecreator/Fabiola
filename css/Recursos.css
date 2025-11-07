@@ -1,0 +1,219 @@
+/* ==========================================================================
+   RECURSOS.CSS
+   --------------------------------------------------------------------------
+   Este archivo contiene los estilos para la visualización de recursos y
+   datos de apoyo, como tablas, listas, alertas, bloques de código e iconos.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tablas de Datos (.data-table)
+   -------------------------------------------------------------------------- */
+
+.data-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Para que el borde redondeado afecte a las celdas */
+}
+
+.data-table thead th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.9rem 1rem;
+    text-align: left;
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.data-table tbody td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+.data-table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.data-table tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+
+.data-table tbody tr:last-of-type td {
+    border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+    background-color: #eaf2f8; /* Azul muy claro */
+}
+
+
+/* --------------------------------------------------------------------------
+   2. Listas de Datos y Definiciones
+   -------------------------------------------------------------------------- */
+
+/* --- Lista de Datos (Clave-Valor) --- */
+.data-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.data-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.data-list li:last-child {
+    border-bottom: none;
+}
+
+.data-list li:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+
+.data-list .key {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-right: 1rem;
+}
+
+.data-list .value {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text-color);
+    text-align: right;
+}
+
+/* --- Lista de Definiciones --- */
+.definition-list dt { /* El término a definir */
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+
+.definition-list dd { /* La definición */
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid #e9ecef;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. Alertas y Cajas de Mensajes (.alert)
+   -------------------------------------------------------------------------- */
+
+.alert {
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    border-left-width: 5px;
+}
+
+.alert h4 {
+    margin-top: 0;
+    color: inherit; /* Hereda el color del texto de la alerta */
+}
+
+/* Modificador de Información (para consejos, etc.) */
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    border-left-color: var(--secondary-color);
+}
+
+/* Modificador de Éxito (para resultados correctos) */
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    border-left-color: #4caf50;
+}
+
+/* Modificador de Advertencia */
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    border-left-color: #ffc107;
+}
+
+/* Modificador de Peligro/Error */
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-left-color: var(--accent-color);
+}
+
+
+/* --------------------------------------------------------------------------
+   4. Bloques de Código y Texto Preformateado
+   -------------------------------------------------------------------------- */
+
+.code-block {
+    background-color: #f1f3f5;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    white-space: pre;
+    overflow-x: auto; /* Esencial para líneas largas */
+    color: #212529;
+}
+
+/* Estilo para código en línea, dentro de un párrafo */
+code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27,31,35,0.05);
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. Iconos
+   -------------------------------------------------------------------------- */
+
+.icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: text-bottom; /* Alinea el icono con la base del texto */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* EJEMPLOS DE USO (requiere las imágenes SVG/PNG en la ruta correcta) */
+/*
+.icon-atom {
+    background-image: url('../img/icons/atom.svg');
+}
+.icon-vector {
+    background-image: url('../img/icons/vector.svg');
+}
+.icon-info {
+    background-image: url('../img/icons/info-circle.svg');
+}
+*/

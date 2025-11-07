@@ -1,0 +1,167 @@
+/* ==========================================================================
+   LIBRARY.CSS
+   --------------------------------------------------------------------------
+   Este archivo contiene patrones de maquetación y estilos de contenido
+   reutilizables. Actúa como una biblioteca de "bloques de construcción"
+   no interactivos para la aplicación.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Sistema de Grid Genérico
+   -------------------------------------------------------------------------- */
+
+.grid-container {
+    display: grid;
+    gap: var(--grid-gap, 2rem); /* Usa una variable o un valor por defecto */
+}
+
+/* Modificadores de columnas */
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Grid responsivo que se ajusta automáticamente */
+.grid-cols-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Media query para apilar las columnas en pantallas pequeñas */
+@media (max-width: 768px) {
+    .grid-cols-2,
+    .grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+   2. Estructura de Secciones y Divisores
+   -------------------------------------------------------------------------- */
+
+/* Contenedor para centrar el contenido dentro de una sección de ancho completo */
+.section-wrapper {
+    max-width: var(--content-width, 1100px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+}
+
+/* Estilo mejorado para la etiqueta <hr> semántica */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #dce1e4;
+    margin: 2.5rem 0;
+}
+
+/* Divisor visual más prominente */
+.visual-divider {
+    border: 0;
+    height: 2px;
+    margin: 3rem 0;
+    background-image: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+}
+
+
+/* --------------------------------------------------------------------------
+   3. Contenedores de Contenido Específico
+   -------------------------------------------------------------------------- */
+
+/* Estilo para tarjetas de ejercicio individuales */
+.exercise-card {
+    margin-bottom: 2rem;
+}
+
+/* Contenedor para los diagramas de orbitales SVG */
+.orbital-diagram-container {
+    width: 100%;
+    min-height: 80px;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    background-image: 
+        linear-gradient(rgba(100, 100, 100, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 100, 100, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border: 1px solid #e9ecef;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Contenedor para múltiples fórmulas */
+.formula-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. Biblioteca Tipográfica
+   -------------------------------------------------------------------------- */
+
+/* Párrafo introductorio con más peso visual */
+.lead-paragraph {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Texto de leyenda para imágenes y diagramas */
+.caption {
+    display: block;
+    font-size: 0.9rem;
+    color: #6c757d; /* Un gris suave */
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+/* Para resaltar un fragmento de texto dentro de un párrafo */
+.highlight-text {
+    background-color: #fff3cd; /* Amarillo pálido */
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    color: #856404;
+    font-weight: 700;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. Contenedores de Medios (Imágenes, Figuras)
+   -------------------------------------------------------------------------- */
+
+.figure-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid #e9ecef;
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.figure-container img,
+.figure-container canvas,
+.figure-container svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilo para la leyenda cuando se usa <figcaption> */
+.figure-container figcaption {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
