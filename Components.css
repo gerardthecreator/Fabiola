@@ -1,0 +1,248 @@
+/* ==========================================================================
+   COMPONENTS.CSS
+   --------------------------------------------------------------------------
+   Este archivo contiene los estilos para todos los componentes de UI 
+   reutilizables de la aplicación "Ayudando a Fabiola".
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Botones (.btn)
+   -------------------------------------------------------------------------- */
+
+/* --- Estilo Base del Botón --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    user-select: none; /* Evita la selección de texto al hacer clic */
+}
+
+/* --- Modificadores de Color --- */
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* --- Estados de Interacción para Botones --- */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn:disabled,
+.btn[disabled] {
+    background-color: #bdc3c7; /* Gris neutro */
+    border-color: #bdc3c7;
+    color: #7f8c8d;
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- Botón Específico para Dibujar --- */
+.btn-draw {
+    margin-bottom: 1.5rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. Tarjetas (.card)
+   -------------------------------------------------------------------------- */
+
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Asegura que el contenido respete el borde redondeado */
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Modificador para tarjetas de desafío */
+.card.challenge {
+    border-left: 5px solid var(--accent-color);
+    background-color: #fffaf0; /* Un tono crema muy sutil */
+}
+
+.card.challenge h4 {
+    color: var(--accent-color);
+}
+
+
+/* --------------------------------------------------------------------------
+   3. Componentes de Tutorial Guiado
+   -------------------------------------------------------------------------- */
+
+.step-by-step-container {
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 1.5rem;
+}
+
+.step {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Círculo decorativo en la línea de tiempo */
+.step::before {
+    content: '';
+    position: absolute;
+    left: -2.1rem; /* (padding-left + border-width/2) */
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background-color: var(--background-color);
+    border: 3px solid var(--secondary-color);
+    border-radius: 50%;
+}
+
+.step-title {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.formula {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    /* ================================================================== */
+    /* CAMBIO SOLICITADO: FUENTE ANTON PARA LAS FÓRMULAS                  */
+    font-family: var(--font-heading); /* Cambia la fuente a Anton */
+    letter-spacing: 1px; /* Añade espaciado para legibilidad */
+    /* ================================================================== */
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin: 1rem 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.result {
+    background-color: #e8f5e9; /* Verde claro */
+    border: 1px solid #a5d6a7;
+    border-left: 5px solid #4caf50; /* Verde */
+    padding: 1.2rem;
+    margin-top: 1rem;
+    /* ================================================================== */
+    /* CAMBIO SOLICITADO: FUENTE ANTON PARA LOS RESULTADOS                */
+    font-family: var(--font-heading); /* Cambia la fuente a Anton */
+    letter-spacing: 1.2px; /* Un poco más de espaciado para el resultado final */
+    /* ================================================================== */
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. Componentes de UI Globales
+   -------------------------------------------------------------------------- */
+
+/* --- Botón Volver Arriba --- */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--secondary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transición con rebote */
+    z-index: 1000;
+}
+
+.back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* --- Botón de Menú Móvil (Hamburguesa) --- */
+.mobile-menu-toggle {
+    display: none; /* Oculto por defecto, se activa en Responsive.css */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. Contenedores Visuales
+   -------------------------------------------------------------------------- */
+
+.animation-container,
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    min-height: 400px;
+    overflow: hidden;
+}
